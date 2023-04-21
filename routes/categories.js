@@ -37,7 +37,7 @@ router.post(
   '/',
   [
     validateJWT,
-    check('nombre', 'El nombre es obligatorio').not().isEmpty(),
+    check('name', 'El nombre es obligatorio').not().isEmpty(),
     validateFields,
   ],
   createCategory
@@ -48,7 +48,7 @@ router.put(
   '/:id',
   [
     validateJWT,
-    check('nombre', 'El nombre es obligatorio').not().isEmpty(),
+    check('name', 'El nombre es obligatorio').not().isEmpty(),
     check('id').custom(existsCategoryById),
     validateFields,
   ],
